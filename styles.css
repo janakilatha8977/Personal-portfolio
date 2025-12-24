@@ -1,0 +1,210 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, Arial;
+}
+
+/* Neon Theme Variables */
+body {
+  --bg1: #050715;
+  --bg2: #0c1332;
+  --text: #e9ecff;
+  --card: rgba(15, 25, 60, 0.45);
+  --line: rgba(255, 255, 255, 0.15);
+  --accent: #79f3ff;
+  --accent2: #7a5cff;
+
+  min-height: 100vh;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 10%, #0f1c5a, transparent),
+              radial-gradient(circle at 90% 90%, #0c6f7e, transparent),
+              linear-gradient(160deg, var(--bg1), var(--bg2));
+  padding: 24px;
+}
+
+/* Light mode (optional toggle still works) */
+body.dark {
+  --bg1: #f4f7ff;
+  --bg2: #dde3ff;
+  --text: #0e1530;
+  --card: rgba(255, 255, 255, 0.75);
+  --line: #cfd5ff;
+  --accent: #526cff;
+  --accent2: #7b96ff;
+
+  background: linear-gradient(160deg, var(--bg1), var(--bg2));
+}
+
+/* Glow animation background overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: conic-gradient(
+      from 45deg,
+      transparent,
+      rgba(124, 255, 255, 0.1),
+      transparent
+  );
+  animation: rotate 14s infinite linear;
+}
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: linear-gradient(
+      135deg,
+      rgba(255,255,255,.05),
+      rgba(255,255,255,.15)
+  );
+  color: var(--text);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: 0.25s ease;
+}
+
+button:hover {
+  box-shadow: 0 0 18px var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Resume Card */
+#resume {
+  max-width: 900px;
+  margin: auto;
+  border-radius: 28px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  background: linear-gradient(
+      160deg,
+      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.02)
+  );
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.45);
+  position: relative;
+}
+
+/* Hologram edge glow */
+#resume::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 30px;
+  background: linear-gradient(120deg, transparent, var(--accent), transparent);
+  filter: blur(6px);
+  opacity: .4;
+  pointer-events: none;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 2px dashed var(--line);
+}
+
+.header h1 {
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+}
+
+/* Section Cards */
+.section {
+  margin: 12px 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(
+      160deg,
+      rgba(255,255,255,.03),
+      rgba(255,255,255,.01)
+  );
+  position: relative;
+}
+
+.section h2 {
+  color: var(--accent);
+  margin-bottom: 8px;
+  letter-spacing: .5px;
+}
+
+/* Divider glow strip */
+.section::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent2), transparent);
+}
+
+/* Education items */
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Skill chips */
+.chips span {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.08);
+}
+
+/* Comments */
+.comments textarea {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  padding: 10px;
+  background: rgba(255,255,255,.04);
+  color: inherit;
+}
+
+#commentList li {
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  padding: 10px;
+  background: rgba(255,255,255,.06);
+}
+
+/* Print (PDF stays professional — no neon) */
+@media print {
+  body {
+    background: white;
+  }
+
+  #resume {
+    box-shadow: none;
+    background: white;
+    border: none;
+  }
+
+  .controls,
+  body::before {
+    display: none;
+  }
+}

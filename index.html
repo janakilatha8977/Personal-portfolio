@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Resume</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- html2pdf library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <div class="controls">
+    <button id="themeToggle">🌗 Theme</button>
+    <button id="downloadBtn">⬇ Download PDF</button>
+  </div>
+
+  <div id="resume">
+
+    <header class="header">
+      <h1>Chandrani Janaki Latha</h1>
+      <p>Rajahmundry, AP • +91 89776 25922 • janakilathachandrani@gmail.com</p>
+    </header>
+
+    <!-- Section 1 -->
+    <section class="section">
+      <h2>Career Objective</h2>
+      <p>
+        To secure an entry-level opportunity in Computer Science and Cloud Computing,
+        where I can develop skills and contribute to impactful projects.
+      </p>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="section">
+      <h2>Education</h2>
+      <div class="item">
+        <strong>B.Sc — Computer Science</strong>
+        <span>Aditya Degree College (2023–2026)</span>
+      </div>
+
+      <div class="item">
+        <strong>Intermediate</strong>
+        <span>Aditya Junior College (2021–2023)</span>
+      </div>
+
+      <div class="item">
+        <strong>High School</strong>
+        <span>Lalachervu Municipal Corporation School (2020–2021)</span>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section">
+      <h2>Skills</h2>
+      <div class="chips">
+        <span>Python</span><span>HTML</span><span>CSS</span><span>Java</span>
+        <span>DBMS</span><span>Communication</span><span>Leadership</span>
+        <span>Problem Solving</span>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="section">
+      <h2>Internships</h2>
+      <ul>
+        <li>Microsoft Azure — worked on VMs, storage, networking</li>
+        <li>DevOps Python Intern — Jenkins, Docker, Git automation</li>
+      </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="section">
+      <h2>Projects</h2>
+      <ul>
+        <li>Responsive website — Famous Places in AP</li>
+        <li>Online Book Store — HTML + CSS</li>
+        <li>Portfolio Website — HTML / CSS / JS</li>
+        <li>Interactive Resume Card</li>
+      </ul>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="section">
+      <h2>Achievements</h2>
+      <ul>
+        <li>HTML5 Certification</li>
+        <li>Python Essentials 1 & 2</li>
+        <li>Microsoft Azure Certification</li>
+        <li>Hackathon Winner — Cloud Deployment System</li>
+      </ul>
+    </section>
+
+    <!-- Comments -->
+    <section class="section comments">
+      <h2>Feedback</h2>
+
+      <textarea id="commentInput" placeholder="Write your comment..."></textarea>
+      <button id="addComment">Post</button>
+
+      <ul id="commentList"></ul>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
